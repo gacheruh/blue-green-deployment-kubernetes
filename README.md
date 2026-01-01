@@ -22,7 +22,7 @@ This project demonstrates containerization, Kubernetes orchestration, and deploy
 >
 > *This repository currently sets up the foundation with a standard Deployment, which can be extended to full Blue-Green workflows.*
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 graph TD;
@@ -35,7 +35,7 @@ graph TD;
     Pod3 --> Redis;
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Windows 11** (recommended for the provided script)
@@ -43,7 +43,7 @@ graph TD;
 - **Minikube**
 - **Kubectl**
 
-### 🛠️ Installation & Deployment
+### Installation & Deployment
 
 1.  **Clone the Repository**
     ```bash
@@ -61,7 +61,7 @@ graph TD;
     The script will automatically run `minikube service` to open the URL.
     - **API Base URL**: `http://<MINIKUBE-IP>:<PORT>` (usually exposed via NodePort)
 
-## 📡 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
@@ -81,9 +81,4 @@ curl -X POST -H "Content-Type: application/json" -d '{"task": "Master Kubernetes
 curl http://localhost:30001/tasks
 ```
 
-## 🤝 Contributing
-1. Fork the repo
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+
