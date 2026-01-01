@@ -1,0 +1,27 @@
+name: CI/CD Pipeline
+
+on:
+    push:
+        branches: ["main"]
+    pull_request:
+        branches: ["main"]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v3
+
+            - name: Build Docker Image
+              uses: docker/build-push-action@v5
+              with:
+                  context: .
+                  push: false # Set to true if you configure Docker Hub/GHCR secrets
+                  tags: flask-task-master:latest
+                  # To push to GHCR (GitHub Container Registry), you'd uncomment the following:
+                  # push: true
+                  # tags: ghcr.io/${{ github.repository }}/flask-task-master:latest
